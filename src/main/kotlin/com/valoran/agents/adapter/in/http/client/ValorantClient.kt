@@ -1,4 +1,4 @@
-package com.valoran.agents.http.client
+package com.valoran.agents.adapter.`in`.http.client
 
 import org.springframework.cloud.openfeign.FeignClient
 import org.springframework.web.bind.annotation.GetMapping
