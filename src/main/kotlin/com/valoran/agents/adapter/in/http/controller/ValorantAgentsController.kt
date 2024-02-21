@@ -1,8 +1,5 @@
 package com.valoran.agents.adapter.`in`.http.controller
 
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.valoran.agents.adapter.`in`.http.client.response.AgentDataClientResponse
-import com.valoran.agents.adapter.`in`.http.client.response.AgentClientResponse
 import com.valoran.agents.adapter.`in`.http.controller.response.AgentResponse
 import com.valoran.agents.adapter.out.GetAgentAdapter
 import com.valoran.agents.application.functions.toResponse
@@ -19,13 +16,13 @@ class ValorantAgentsController(
 ) {
 
     @GetMapping
-    fun getAllAgents(): List<AgentResponse> {
-        return agentAdapter.getAgents().map { it.toResponse() }
+    fun getAllAgents(): String {
+        return agentAdapter.getAgents()
     }
 
     @GetMapping("/{id}")
-    fun getAgentById(@PathVariable id: String): ResponseEntity<AgentDataClientResponse> {
-        TODO("Not yet implemented")
+    fun getAgentById(@PathVariable id: String): ResponseEntity<AgentResponse> {
+        return ResponseEntity.ok(agentAdapter.getAgentById(id).toResponse())
     }
 
 }
