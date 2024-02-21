@@ -1,15 +1,13 @@
-package com.valoran.agents.http.controller.response
+package com.valoran.agents.adapter.`in`.http.controller.response
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-data class AgentDataResponse (
+data class AgentResponse (
     @JsonProperty("uuid")
-    val uuid: String? = null,
+    val agentId: String? = null,
 
     @JsonProperty("displayName")
-    val displayName: String? = null,
+    val agentName: String? = null,
 
     @JsonProperty("description")
     val description: String? = null,
